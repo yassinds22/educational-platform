@@ -62,3 +62,26 @@ Route::prefix('student')->name('student.')->group(function () {
         return view('clients.student.player');
     })->name('player');
 });
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    })->name('dashboard');
+
+    Route::get('/users', function () {
+        return view('admin.users');
+    })->name('users');
+
+    Route::get('/courses', function () {
+        return view('admin.courses');
+    })->name('courses');
+
+    Route::get('/categories', function () {
+        return view('admin.categories');
+    })->name('categories');
+});
