@@ -40,6 +40,11 @@ class Lesson extends Model implements HasMedia
         return $this->hasMany(LessonProgress::class);
     }
 
+    public function resources(): HasMany
+    {
+        return $this->hasMany(LessonResource::class);
+    }
+
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('video')

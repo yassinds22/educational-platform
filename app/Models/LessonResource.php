@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Resource extends Model implements HasMedia
+class LessonResource extends Model implements HasMedia
 {
     use InteractsWithMedia;
+
+    protected $table = 'resources';
 
     protected $fillable = [
         'lesson_id',
